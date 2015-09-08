@@ -11,6 +11,13 @@
 |
 */
 
+
+// Define GET routes for contact page
+Route::get('/contact', function () {
+    return view('ContactController@contact');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
+
