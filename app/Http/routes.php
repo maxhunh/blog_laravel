@@ -26,9 +26,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Routest for pages
+// Routes for pages
 Route::get('/page','PagesController@index');
 Route::get('/page/about','PagesController@about');
 Route::get('/page/contact','PagesController@contact');
+
+// Routes for products
+Route::get('/product','ProductsController@index');
 
 
