@@ -13,6 +13,6 @@ class PagesController extends Controller
     public function index()
     {
       $data = "demo controller data";
-      return view("pages.index", $data);
+      return view("pages.index")->with('data',$data);
     }
 }
