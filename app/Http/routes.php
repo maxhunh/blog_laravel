@@ -27,6 +27,8 @@ Route::get('/', function () {
 });
 
 // Routest for pages
-Route::get('/page/index','PagesController@index');
+Route::get('/page','PagesController@index');
+Route::get('/page/about','PagesController@about');
+Route::get('/page/contact','PagesController@contact');
 
 
