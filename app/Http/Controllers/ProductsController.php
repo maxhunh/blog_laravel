@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Products; // Call model class to use
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +16,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-      return view('products.index');
+      $list_product = Products::all();
+      return view('products.index')->with('list_product', $list_product);
     }
 
     // /**

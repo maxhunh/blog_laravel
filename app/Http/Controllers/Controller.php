@@ -13,7 +13,6 @@ abstract class Controller extends BaseController
 
     public function contact()
     {
-      $$data = "demo";
     }
 
 }
