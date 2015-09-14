@@ -12,12 +12,21 @@
 */
 
 
-// Define GET routes for contact page
+// Routes for static page
 Route::get('/contact', function () {
-    return view('ContactController@contact');
+    return view('static_page/contact');
 });
 
+Route::get('/about', function () {
+    return view('static_page/about');
+});
+
+// Routes for homepage
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Routest for pages
+Route::get('/page/index','PagesController@index');
+
 

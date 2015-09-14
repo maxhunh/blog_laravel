@@ -6,7 +6,7 @@
     <h1>Hello world</h1>
     <h2>
       <?php
-        echo $data;
+        echo "Here is contact page !"
       ?>
     </h2>
   </body>
