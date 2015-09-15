@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Products; // Call model class to use
+use App\Products; // NOTE: Call model class to use
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -20,26 +20,36 @@ class ProductsController extends Controller
       return view('products.index')->with('list_product', $list_product);
     }
 
-    // /**
-    //  * Show the form for creating a new resource.
-    //  *
-    //  * @return Response
-    //  */
-    // public function create()
-    // {
-    //     //
-    // }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+      return view('products.create');
+    }
 
-    // /**
-    //  * Store a newly created resource in storage.
-    //  *
-    //  * @param  Request  $request
-    //  * @return Response
-    //  */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+      // NOTE: init add asign value for obj
+      $pro = new Products();
+
+      $pro->name = $request["name"];
+      $pro->pro_code = $request["pro_code"];
+      $pro->desc = $request["desc"];
+
+      $pro->save();
+
+      // NOTE: redirect to product (get)
+      return redirect('/product');
+    }
 
     // /**
     //  * Display the specified resource.

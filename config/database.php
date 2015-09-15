@@ -54,6 +54,7 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
+            // NOTE: config in file .env
             'host'      => env('DB_HOST', 'localhost'),
             'database'  => env('DB_DATABASE', 'forge'),
             'username'  => env('DB_USERNAME', 'forge'),

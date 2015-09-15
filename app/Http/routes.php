@@ -12,7 +12,7 @@
 */
 
 
-// Routes for static page
+// NOTE: Routes for static page
 Route::get('/contact', function () {
     return view('static_page/contact');
 });
@@ -21,17 +21,19 @@ Route::get('/about', function () {
     return view('static_page/about');
 });
 
-// Routes for homepage
+// NOTE: Routes for homepage
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Routes for pages
+// NOTE: Routes for pages
 Route::get('/page','PagesController@index');
 Route::get('/page/about','PagesController@about');
 Route::get('/page/contact','PagesController@contact');
 
-// Routes for products
+// NOTE: Routes for products
 Route::get('/product','ProductsController@index');
+Route::get('/product/create','ProductsController@create');
+Route::post('/product','ProductsController@store');
 
 

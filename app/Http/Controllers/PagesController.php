@@ -9,11 +9,11 @@ use App\Http\Controllers\Controller;
 
 class PagesController extends Controller
 {
-    // Handle views of controller pages
+    // NOTE: Handle views of controller pages
     public function index()
     {
       $data = "demo controller data";
-      // Reture view with value of data
+      // NOTE: Reture view with value of data
       return view("pages.index")->with('data',$data);
     }
 
