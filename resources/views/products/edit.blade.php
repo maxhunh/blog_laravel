@@ -28,4 +28,5 @@
     {!! Form::submit('Update') !!}
     {!! Form::close() !!}
   </body>
+
 </html>

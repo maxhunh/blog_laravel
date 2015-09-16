@@ -36,5 +36,5 @@ Route::get('/page/contact','PagesController@contact');
 // Route::get('products/create','ProductsController@create');
 // Route::post('products','ProductsController@store');
 
-$router->resource('products', 'ProductsController');
+Route::resource('products', 'ProductsController');
 
