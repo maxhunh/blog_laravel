@@ -32,8 +32,8 @@ Route::get('/page/about','PagesController@about');
 Route::get('/page/contact','PagesController@contact');
 
 // NOTE: Routes for products
-Route::get('/product','ProductsController@index');
-Route::get('/product/create','ProductsController@create');
-Route::post('/product','ProductsController@store');
+Route::get('product','ProductsController@index');
+Route::get('product/create','ProductsController@create');
+Route::post('product','ProductsController@store');
 
 

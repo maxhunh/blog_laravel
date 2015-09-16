@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Products; // NOTE: Call model class to use
 use App\Http\Requests;
+use App\Http\Requests\CheckProductsRequest; // NOTE: use this class instand for  Request class
 use App\Http\Controllers\Controller;
 
 class ProductsController extends Controller
@@ -36,12 +37,13 @@ class ProductsController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    // NOTE: Use moudle CheckProductsRequest instead module Request to handle validate for params
+    public function store(CheckProductsRequest $request)
     {
       // NOTE: init add asign value for obj
-      $pro = new Products();
 
       // NOTE: long code to create product
+      // $pro = new Products();
       // $pro->name = $request["name"];
       // $pro->pro_code = $request["pro_code"];
       // $pro->desc = $request["desc"];
@@ -51,7 +53,6 @@ class ProductsController extends Controller
       // NOTE: short code to create product
       //       $request->all() return array all params
       Products::create($request->all());
-
 
       // NOTE: redirect to product (get)
       return redirect('/product');

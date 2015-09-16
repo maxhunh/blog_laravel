@@ -21,11 +21,21 @@
     <br/>
     <br/>
     {!! Form::label('created_at','Created date:') !!}
-    {{-- NOTEL date("Y-m-d") -> get current data for default value --}}
+    {{-- NOTE: date("Y-m-d") -> get current data for default value --}}
     {!! Form::input('date', 'created_at', date("Y-m-d")) !!}
     <br/>
     <br/>
     {!! Form::submit('Add New') !!}
     {!! Form::close() !!}
+    {{-- NOTE: part to show errors validate when create new products --}}
+    <p>
+      @if ( $errors->any() )
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      @endif
+    </p>
   </body>
 </html>
