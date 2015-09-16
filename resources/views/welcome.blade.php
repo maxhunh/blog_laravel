@@ -40,7 +40,7 @@
             <div class="content">
                 <div class="title">Laravel 5</div>
                 <a href="/page">Pages</a>
-                <a href="/product">Products</a>
+                <a href="/products">Products</a>
             </div>
             <div>
             </div>

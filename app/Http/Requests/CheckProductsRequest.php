@@ -14,7 +14,8 @@ class CheckProductsRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        // NOTE: fix error: Forbidden
+        return true;
     }
 
     /**
@@ -27,7 +28,7 @@ class CheckProductsRequest extends Request
         return [
             'name'       => 'required|min:6',
             'pro_code'   => 'required|max:4',
-            'created_at' => 'required|date'
+            'created_at' => 'required|date',
         ];
     }
 }

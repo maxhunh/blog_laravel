@@ -40,9 +40,15 @@ class ProductsController extends Controller
     // NOTE: Use moudle CheckProductsRequest instead module Request to handle validate for params
     public function store(CheckProductsRequest $request)
     {
-      // NOTE: init add asign value for obj
+      // NOTE: use this way when use module Request
+      // $this->validate($request, [
+      //   'name'       => 'required|min:6',
+      //   'pro_code'   => 'required|max:4',
+      //   'created_at' => 'required|date',
+      // ]);
 
       // NOTE: long code to create product
+      // NOTE: init add asign value for obj
       // $pro = new Products();
       // $pro->name = $request["name"];
       // $pro->pro_code = $request["pro_code"];
@@ -55,7 +61,7 @@ class ProductsController extends Controller
       Products::create($request->all());
 
       // NOTE: redirect to product (get)
-      return redirect('/product');
+      return redirect('products');
     }
 
     // /**

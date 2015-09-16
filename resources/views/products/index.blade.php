@@ -7,5 +7,5 @@
     <li>Name: {{$product->name}} | Code: {{$product->pro_code}} | Desc: {{$product->desc}} | Created at: {{$product->created_at}} </li>
    @endforeach
  </ol>
- <a href="/product/create">New product</a>
+ <a href="products/create">New product</a>
 @stop

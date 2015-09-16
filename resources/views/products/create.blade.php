@@ -7,7 +7,7 @@
     <h1>Add new product</h1>
     {{-- NOTE: Use Form of html service --}}
     {{--       Read More: http://laravelcollective.com/docs/5.1/html --}}
-    {!! Form::open(['url' => 'product']) !!}
+    {!! Form::open(['url' => 'products']) !!}
     {!! Form::label('name','Name:') !!}
     {!! Form::input('text', 'name') !!}
     <br/>
@@ -29,12 +29,14 @@
     {!! Form::close() !!}
     {{-- NOTE: part to show errors validate when create new products --}}
     <p>
-      @if ( $errors->any() )
-        <ul>
-          @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
+      @if (count($errors) > 0)
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
       @endif
     </p>
   </body>
