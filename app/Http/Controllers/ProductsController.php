@@ -41,11 +41,17 @@ class ProductsController extends Controller
       // NOTE: init add asign value for obj
       $pro = new Products();
 
-      $pro->name = $request["name"];
-      $pro->pro_code = $request["pro_code"];
-      $pro->desc = $request["desc"];
+      // NOTE: long code to create product
+      // $pro->name = $request["name"];
+      // $pro->pro_code = $request["pro_code"];
+      // $pro->desc = $request["desc"];
+      // $pro->created_at = $request["created_at"];
+      // $pro->save();
 
-      $pro->save();
+      // NOTE: short code to create product
+      //       $request->all() return array all params
+      Products::create($request->all());
+
 
       // NOTE: redirect to product (get)
       return redirect('/product');

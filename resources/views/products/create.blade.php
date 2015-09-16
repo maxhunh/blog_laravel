@@ -9,15 +9,20 @@
     {{--       Read More: http://laravelcollective.com/docs/5.1/html --}}
     {!! Form::open(['url' => 'product']) !!}
     {!! Form::label('name','Name:') !!}
-    {!! Form::text('name') !!}
+    {!! Form::input('text', 'name') !!}
     <br/>
     <br/>
     {!! Form::label('pro_code','Product code:') !!}
-    {!! Form::text('pro_code') !!}
+    {!! Form::input('text', 'pro_code') !!}
     <br/>
     <br/>
     {!! Form::label('desc','Product desc:') !!}
-    {!! Form::text('desc') !!}
+    {!! Form::input('text', 'desc') !!}
+    <br/>
+    <br/>
+    {!! Form::label('created_at','Created date:') !!}
+    {{-- NOTEL date("Y-m-d") -> get current data for default value --}}
+    {!! Form::input('date', 'created_at', date("Y-m-d")) !!}
     <br/>
     <br/>
     {!! Form::submit('Add New') !!}
