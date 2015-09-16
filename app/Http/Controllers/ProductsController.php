@@ -10,33 +10,33 @@ use App\Http\Controllers\Controller;
 
 class ProductsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
+    // *
+    //  * Display a listing of the resource.
+    //  *
+    //  * @return Response
+
     public function index()
     {
       $list_product = Products::all();
       return view('products.index')->with('list_product', $list_product);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
+    // *
+    //  * Show the form for creating a new resource.
+    //  *
+    //  * @return Response
+
     public function create()
     {
       return view('products.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  Request  $request
-     * @return Response
-     */
+    // *
+    //  * Store a newly created resource in storage.
+    //  *
+    //  * @param  Request  $request
+    //  * @return Response
+
     // NOTE: Use moudle CheckProductsRequest instead module Request to handle validate for params
     public function store(CheckProductsRequest $request)
     {
@@ -70,10 +70,11 @@ class ProductsController extends Controller
     //  * @param  int  $id
     //  * @return Response
     //  */
-    // public function show($id)
-    // {
-    //     //
-    // }
+    public function show($id)
+    {
+      $pro = Products::findOrFail($id);
+      return view('products.show',compact('pro'));
+    }
 
     // *
     //  * Show the form for editing the specified resource.
@@ -81,10 +82,11 @@ class ProductsController extends Controller
     //  * @param  int  $id
     //  * @return Response
 
-    // public function edit($id)
-    // {
-    //     //
-    // }
+    public function edit($id)
+    {
+      $pro = Products::findOrFail($id);
+      return view('products.edit',compact('pro'));
+    }
 
     // /**
     //  * Update the specified resource in storage.
@@ -93,10 +95,12 @@ class ProductsController extends Controller
     //  * @param  int  $id
     //  * @return Response
     //  */
-    // public function update(Request $request, $id)
-    // {
-    //     //
-    // }
+    public function update(Request $request, $id)
+    {
+      $pro = Products::findOrFail($id);
+      $pro->update($request->all());
+      return redirect('products');
+    }
 
     // /**
     //  * Remove the specified resource from storage.

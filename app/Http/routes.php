@@ -32,8 +32,9 @@ Route::get('/page/about','PagesController@about');
 Route::get('/page/contact','PagesController@contact');
 
 // NOTE: Routes for products
-Route::get('products','ProductsController@index');
-Route::get('products/create','ProductsController@create');
-Route::post('products','ProductsController@store');
+// Route::get('products','ProductsController@index');
+// Route::get('products/create','ProductsController@create');
+// Route::post('products','ProductsController@store');
 
+$router->resource('products', 'ProductsController');
 
