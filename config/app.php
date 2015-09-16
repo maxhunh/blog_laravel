@@ -138,6 +138,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         // NOTE: Add provider html service
         Illuminate\Html\HtmlServiceProvider::class,
+        // NOTEL Pakage to debug sbar laravel
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
