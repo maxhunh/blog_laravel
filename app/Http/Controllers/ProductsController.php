@@ -108,8 +108,9 @@ class ProductsController extends Controller
     //  * @param  int  $id
     //  * @return Response
     //  */
-    // public function destroy($id)
-    // {
-    //     //
-    // }
+    public function destroy($id)
+    {
+      Products::findOrFail($id)->delete();
+      return redirect('products');
+    }
 }
