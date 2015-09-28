@@ -1,9 +1,6 @@
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Form to create new product</title>
-</head>
-  <body>
+@extends('template.product_template')
+
+@section('child_product_page')
     <h1>Edit product</h1>
     {{-- NOTE: Use Form of html service --}}
     {{--       Read More: http://laravelcollective.com/docs/5.1/html --}}
@@ -27,6 +24,4 @@
     <br/>
     {!! Form::submit('Update') !!}
     {!! Form::close() !!}
-  </body>
-
-</html>
+@stop
