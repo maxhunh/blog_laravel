@@ -46,7 +46,7 @@ class WelcomeController extends Controller
     public function about()
     {
         $info = ['12','male','090 12342323'];
-        return view('welcome.page.about', array('name'=>'Quach Huynh Duc','info'=>$info));
+        return view('welcome.page.about', array('name'=>'Quach Huynh <span style="color: red;">Duc</span> <script>alert("hello");</script>','info'=>$info));
     }
 
 

@@ -4,7 +4,8 @@
     <title>About page</title>
 </head>
 <body>
-<p>I am {{$name}} </p>
+
+<p>I am {!!$name!!} </p>
 <p>age {{$info[0]}} </p>
 <p>fone {{$info[1]}} </p>
 <p>sex {{$info[1]}} </p>
