@@ -21,7 +21,7 @@ class WelcomeController extends Controller
          * '<p>I am index page</p>
          *  <p><a href="/contact">Contact page</a></p>';
          */
-        return view('welcome');
+        return view('welcome.index');
 
     }
 
@@ -34,7 +34,19 @@ class WelcomeController extends Controller
     public function contact()
     {
         // return view contact in folder (other view ex: return redirect, post, resource, ...)
-        return view('page.contact');
+        return view('welcome.page.contact');
+    }
+
+     /**
+     * Display about page for website
+     *
+     * @return Response
+     */
+
+    public function about()
+    {
+        $info = ['12','male','090 12342323'];
+        return view('welcome.page.about', array('name'=>'Quach Huynh Duc','info'=>$info));
     }
 
 
